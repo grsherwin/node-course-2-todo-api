@@ -22,17 +22,17 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',(err, client) => {
 
   const db = client.db('TodoApp');
 
-  // db.collection('Todos').insertOne({
-  //   text: 'Something to do',
-  //   completed: false
-  // }, (err, result) => {
-  //   if (err) {
-  //     return console.log('Unable to insert todo', err);
-  //   }
-  //
-  //   console.log(JSON.stringify(result.ops, undefined, 2));
-  //   console.log('todo inserted')
-  // });
+  db.collection('Todos').insertOne({
+    text: 'Eat lunch',
+    completed: false
+  }, (err, result) => {
+    if (err) {
+      return console.log('Unable to insert todo', err);
+    }
+
+    console.log(JSON.stringify(result.ops, undefined, 2));
+    console.log('todo inserted')
+  });
 
   // db.collection('users').insertOne({
   //   name: 'Glen Sherwin',
